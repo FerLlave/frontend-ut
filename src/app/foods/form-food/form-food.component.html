@@ -1,25 +1,27 @@
 <div class="flex flex-row gap-6 w-full justify-center items-center">
-
   <form [formGroup]="form" class="w-1/2 p-4">
-
     <button mat-icon-button [routerLink]="'/food/food-list'">
-
       <mat-icon>arrow_back</mat-icon>
-
     </button>
-    
-    
-      <h1 class="text-2x1 text-black font-bold pb-6"> {{edit ?'Editar comida':'Añadir nueva comida' }} </h1>
+
+    <h1 class="text-2x1 text-black font-bold pb-6">
+      {{ edit ? "Editar comida" : "Añadir nueva comida" }}
+    </h1>
     <!-- nombre-->
     <div class="example-container pb-2">
       <mat-form-field class="w-full">
         <mat-label>Nombre</mat-label>
-        <input matInput placeholder="ejem.Pizza" formControlName="name" required>
+        <input
+          matInput
+          placeholder="ejem.Pizza"
+          formControlName="name"
+          required
+        />
         @if (name?.invalid && (name?.dirty || name?.touched)) {
         <mat-error>
           @if (name?.hasError('required')){
 
-          <span class=" text-xs">Campo requerido</span>
+          <span class="text-xs">Campo requerido</span>
           }
         </mat-error>
         }
@@ -30,12 +32,12 @@
     <div class="example-container pb-2">
       <mat-form-field class="w-full">
         <mat-label>Imagen</mat-label>
-        <input matInput formControlName="image" required>
+        <input matInput formControlName="image" required />
         @if (image?.invalid && (image?.dirty || image?.touched)) {
         <mat-error>
           @if (image?.hasError('required')){
 
-          <span class=" text-xs"> Campo requerido</span>
+          <span class="text-xs"> Campo requerido</span>
           }
         </mat-error>
         }
@@ -51,12 +53,14 @@
         <mat-error>
           @if (description?.hasError('required')){
 
-          <span class=" text-xs">Campo requerido</span>
-          }
-          @if(description?.hasError('minlenght')){
+          <span class="text-xs">Campo requerido</span>
+          } @if(description?.hasError('minlenght')){
 
-          <span class=" text-xs">Debe tener min {{description?.getError('minlenght').requiredLenght}} caracteres, hay
-            {{description?.getError('minlenght').actualLenght}} </span>
+          <span class="text-xs"
+            >Debe tener min
+            {{ description?.getError("minlenght").requiredLenght }} caracteres,
+            hay {{ description?.getError("minlenght").actualLenght }}
+          </span>
 
           }
         </mat-error>
@@ -76,7 +80,7 @@
         <mat-error>
           @if (category?.hasError('required')){
 
-          <span class=" text-xs"> Campo requerido</span>
+          <span class="text-xs"> Campo requerido</span>
           }
         </mat-error>
         }
@@ -86,18 +90,26 @@
     <div class="example-container pb-2">
       <mat-form-field class="w-full">
         <mat-label>Precio</mat-label>
-        <input matInput type="number" placeholder="0" formControlName="price" class="right-align" required>
+        <input
+          matInput
+          type="number"
+          placeholder="0"
+          formControlName="price"
+          class="right-align"
+          required
+        />
         <span matTextPrefix>$&nbsp;</span>
         <span matTextSuffix>.00</span>
         @if (price?.invalid && (price?.dirty || price?.touched)) {
         <mat-error>
           @if (price?.hasError('required')){
 
-          <span class=" text-xs"> Campo requerido</span>
-          }
-          @if (price?.hasError('min')) {
-          <span class=" text-xs"> El valor minimo es de {{price?.getError('min').min}}, el valor actual es de
-            {{price?.getError('min').actual}} </span>
+          <span class="text-xs"> Campo requerido</span>
+          } @if (price?.hasError('min')) {
+          <span class="text-xs">
+            El valor minimo es de {{ price?.getError("min").min }}, el valor
+            actual es de {{ price?.getError("min").actual }}
+          </span>
           }
         </mat-error>
         }
@@ -106,11 +118,19 @@
 
     <!-- boton-->
 
-    <button type="submit" mat-raised-button [disabled]="form.invalid" (click)="edit? updateData():sendData()">
-      {{edit?'Actualizar':'Añadir'}} </button>
-
+    <button
+      type="submit"
+      mat-raised-button
+      [disabled]="form.invalid"
+      (click)="edit ? updateData() : sendData()"
+    >
+      {{ edit ? "Actualizar" : "Añadir" }}
+    </button>
   </form>
   <div>
-    <img class="rounded-lg w-full aspect-auto object-contain" src="{{image?.value}}">
+    <img
+      class="rounded-lg w-full aspect-auto object-contain"
+      src="{{ image?.value }}"
+    />
   </div>
 </div>

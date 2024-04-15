@@ -21,11 +21,18 @@ export class FoodListComponent implements OnInit {
     console.log(this.data);
   }
 
-  getAllFoods() {
+  public getAllFoods() {
     this.serviceFood.getAll().subscribe({
       next: (data) => (this.data = data),
       error: (e) => console.error(e),
       complete: () => console.info('Complete'),
     });
+  }
+
+  public ItemDeleted(deleted:boolean){
+    if (deleted) {
+      this.getAllFoods();
+    }
+ 
   }
 }

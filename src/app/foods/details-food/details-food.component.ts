@@ -4,8 +4,9 @@ import { Food } from '../shared/food.model';
 import { FoodService } from '../shared/food.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { CurrencyPipe, TitleCasePipe } from '@angular/common';
+import { CurrencyPipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { subscribe } from 'node:diagnostics_channel';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-details-food',
@@ -16,6 +17,7 @@ import { subscribe } from 'node:diagnostics_channel';
     MatButtonModule,
     CurrencyPipe,
     TitleCasePipe,
+    MatIcon
   ],
   templateUrl: './details-food.component.html',
   styleUrl: './details-food.component.scss',

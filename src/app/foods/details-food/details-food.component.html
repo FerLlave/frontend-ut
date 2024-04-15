@@ -1,18 +1,33 @@
-<mat-card class="flex items-center">
-    <mat-card-header>
-        <div class="flex flex-col ml-4">
-            <mat-card-title class="text-5xl uppercase bg-yellow-300 rounded-lg p-3 m-2 ">{{food?.name}} </mat-card-title>
-        
-        </div>
-        
-    </mat-card-header>
+<div>
+    <mat-card class="flex items-center">
+        <mat-card-header>
+            <div class="flex flex-col ml-4">
+                <mat-card-title class="text-5xl uppercase bg-yellow-300 rounded-lg p-3 m-2 ">{{food?.name}} </mat-card-title>
+            
+            </div>
+            
+        </mat-card-header>
+    
+        <img mat-card-image class="w-80" src="{{food?.image}}" alt="">
+        <mat-card-content class="ml-4">
+            <p>Category: {{food?.category}}</p>
+            <p>{{food?.description}} </p>
+            <p>{{food?.price|currency:'MXN'}}</p>   
+           
+        </mat-card-content>
+    
+    </mat-card>
 
-    <img mat-card-image class="w-80" src="{{food?.image}}" alt="">
-    <mat-card-content class="ml-4">
-        <p>Category: {{food?.category}}</p>
-        <p>{{food?.description}} </p>
-        <p>{{food?.price|currency:'MXN'}}</p>   
-       
-    </mat-card-content>
+    <div class="flex flex-col gap-4">
+        <button mat-raised-button color="primary" extended>Actualizar
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-raised-button color="accent" extended>Añadir nueva comida
+            <mat-icon>add</mat-icon>
+        </button>
+        <button mat-raised-button color="warn" extended>Borrar
+            <mat-icon>delete</mat-icon>
 
-</mat-card>
+        </button>
+    </div>
+</div>
