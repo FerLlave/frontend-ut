@@ -1,0 +1,44 @@
+<mat-toolbar>
+    <button mat-icon-button (click)="snav.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+
+  <!-- contenedor y side bar-->
+  
+<mat-drawer-container class="w-full h-full pt-10">
+    <mat-drawer [mode]="mobileQuery.matches ? 'over' : 'side'" #snav [opened]="mobileQuery.matches ? 'false' : 'true'"
+     class ="w-60 px-2 pt-16">
+      <!-- menu de opciones-->
+      
+      <mat-nav-list>
+        @for(link of links; track link){
+          <mat-list-item [routerLink]="link.routerLink">
+            <a matListItemTitle> {{link.label}} </a>
+            <mat-icon matListItemIcon> {{link.icon}} </mat-icon>
+
+          </mat-list-item>
+        }
+       
+       
+      </mat-nav-list>
+      
+    </mat-drawer>
+    
+    <mat-drawer-content class="px-10"> 
+      <!--RUTAS-->
+      <ng-content></ng-content> 
+    </mat-drawer-content>
+    
+</mat-drawer-container>
+
+
+ 

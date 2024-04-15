@@ -1,0 +1,18 @@
+<mat-card class="flex items-center">
+    <mat-card-header>
+        <div class="flex flex-col ml-4">
+            <mat-card-title class="text-5xl uppercase bg-yellow-300 rounded-lg p-3 m-2 ">{{food?.name}} </mat-card-title>
+        
+        </div>
+        
+    </mat-card-header>
+
+    <img mat-card-image class="w-80" src="{{food?.image}}" alt="">
+    <mat-card-content class="ml-4">
+        <p>Category: {{food?.category}}</p>
+        <p>{{food?.description}} </p>
+        <p>{{food?.price|currency:'MXN'}}</p>   
+       
+    </mat-card-content>
+
+</mat-card>
