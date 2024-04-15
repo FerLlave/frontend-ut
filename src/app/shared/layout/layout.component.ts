@@ -54,6 +54,10 @@ export class LayoutComponent implements OnDestroy {
       routerLink: 'food/form'
     }
   ]
+  public mediaMatcher(){
+    console.log(this.mobileQuery.matches);
+    
+  }
 
 
   public open() {
