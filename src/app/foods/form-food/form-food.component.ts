@@ -4,7 +4,6 @@ import {
   ReactiveFormsModule,
   Validators,
   FormsModule,
- 
 } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -13,7 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { Food } from '../shared/food.model';
 import { FoodService } from '../shared/food.service';
-import { ActivatedRoute,RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 
@@ -112,8 +111,7 @@ export class FormFoodComponent implements OnInit {
           error: (e) => console.error(e),
           complete: () => this.router.navigate(['/food/food-list']),
         });
-
-       }
+      }
     }
   }
   public sendData() {
@@ -140,13 +138,12 @@ export class FormFoodComponent implements OnInit {
 
         //Añadiendo nueva comida
         console.log(comida);
-        
+
         this.servicioComida.addFood(comida).subscribe({
           next: (value) => (this.food = value),
           error: (e) => console.error(e),
-          complete: () =>this.router.navigate(['/food/food-list']),
+          complete: () => this.router.navigate(['/food/food-list']),
         });
-        
       }
     }
   }

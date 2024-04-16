@@ -23,10 +23,10 @@ export class FoodService {
 
   //agregar una comida
   public addFood(food: Food): Observable<Food> {
-    return this.http.post<Food>(this.API_URL + 'food/save', food);
+    return this.http.post<Food>(this.API_URL + 'food/save',food);
   }
   public getOneFood(id: number): Observable<Food> {
-    return this.http.get<Food>(this.API_URL + 'food/find' + id);
+    return this.http.get<Food>(this.API_URL + 'food/find/'+id);
   }
 
   public deleteFood(deleteFood: Food): Observable<unknown> {
