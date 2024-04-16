@@ -20,7 +20,7 @@ import { Output, EventEmitter } from '@angular/core';
 export class FoodComponent {
 
   @Input() food?:Food;
-  @Output() eventDeleteItem = new EventEmitter<boolean>;
+  @Output() eventDeleteFood = new EventEmitter<boolean>;
   constructor(public serviceFood:FoodService, public dialog:MatDialog){
 
   }
@@ -44,14 +44,14 @@ export class FoodComponent {
     this.serviceFood.deleteFood(food).subscribe({
       next:() => console.log('Se esta eliminando'),
       error:(e) => console.error (e),
-      complete:() => console.info('complete')     
+      complete:() => this.deleteFoodEvent(true),     
       
     })
 
   }
 
-  public deleteItemEvent(value:boolean){
-    this.eventDeleteItem.emit(value);
+  public deleteFoodEvent(value:boolean){
+    this.eventDeleteFood.emit(value);
   }
 
 

@@ -29,7 +29,7 @@ export class FoodListComponent implements OnInit {
     });
   }
 
-  public ItemDeleted(deleted:boolean){
+  public FoodDeleted(deleted:boolean):void{
     if (deleted) {
       this.getAllFoods();
     }

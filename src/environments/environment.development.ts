@@ -1,3 +1,3 @@
 export const environment = {
-    API_URL:"https://backend-ut.onrender.com"
+    API_URL:"https://backend-ut.onrender.com/"
 };

@@ -4,16 +4,16 @@ import {
   ReactiveFormsModule,
   Validators,
   FormsModule,
-  AbstractControl,
+ 
 } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { MatButton } from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { Food } from '../shared/food.model';
 import { FoodService } from '../shared/food.service';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute,RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 
@@ -26,7 +26,7 @@ import { MatIcon } from '@angular/material/icon';
     MatIconModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatButton,
+    MatButtonModule,
     RouterModule,
     MatIcon,
   ],
@@ -139,7 +139,8 @@ export class FormFoodComponent implements OnInit {
         };
 
         //Añadiendo nueva comida
-
+        console.log(comida);
+        
         this.servicioComida.addFood(comida).subscribe({
           next: (value) => (this.food = value),
           error: (e) => console.error(e),

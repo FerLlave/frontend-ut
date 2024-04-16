@@ -1,7 +1,7 @@
 <div class="flex flex-row gap-4 flex-wrap justify-center">
     @for(food of data; track food.name){
         
-      <app-food [food]="food" (eventDeleteItem)="ItemDeleted($event)"></app-food>
+      <app-food [food]="food" (eventDeleteFood)="FoodDeleted($event)"></app-food>
 
      }@empty{
         <li> There are no items</li>

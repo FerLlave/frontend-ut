@@ -12,7 +12,7 @@ export class FoodService {
 
   menu: Food[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http:HttpClient) {
     this.API_URL = `${environment.API_URL}`;
   }
 
