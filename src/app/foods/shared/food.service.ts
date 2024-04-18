@@ -30,6 +30,6 @@ export class FoodService {
   }
 
   public deleteFood(deleteFood: Food): Observable<unknown> {
-    return this.http.delete(this.API_URL + 'food/delete/' + deleteFood.id);
+    return this.http.delete(this.API_URL + 'food/delete/'+deleteFood.id);
   }
 }
